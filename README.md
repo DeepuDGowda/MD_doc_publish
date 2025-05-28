@@ -2,6 +2,12 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
+### Live Site
+
+👉 [Click here to view the live documentation](https://DeepuDGowda.github.io/MD_doc_publish/)
+
+> Deployed using GitHub Pages
+
 ## Installation
 
 ```bash
