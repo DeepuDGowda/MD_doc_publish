@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'MD Documentation Site',
+  tagline: 'Publish and manage your Markdown docs easily',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -20,15 +20,15 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://DeepuDGowda.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/MD_doc_publish/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'DeepuDGowda', // Usually your GitHub org/user name.
+  projectName: 'MD_doc_publish', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -42,38 +42,22 @@ const config = {
   },
 
   presets: [
-    [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
-        theme: {
-          customCss: './src/css/custom.css',
-        },
-      }),
-    ],
+  [
+    'classic',
+    {
+      docs: {
+        routeBasePath: '/', // ✅ makes docs the homepage
+        sidebarPath: require.resolve('./sidebars.js'),
+        editUrl: 'https://github.com/DeepuDGowda/MD_doc_publish/tree/main/',
+      },
+      blog: false, // ✅ disable blog if not needed
+      theme: {
+        customCss: require.resolve('./src/css/custom.css'),
+      },
+    },
   ],
+],
+
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -93,14 +77,14 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/DeepuDGowda/MD_doc_publish',
             label: 'GitHub',
             position: 'right',
           },
         ],
       },
+
       footer: {
         style: 'dark',
         links: [
@@ -109,7 +93,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/',
               },
             ],
           },
@@ -134,18 +118,16 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/DeepuDGowda/MD_doc_publish',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} DocuSaurus MD Documentation Site. Built with Docusaurus.`,
       },
+
+
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
